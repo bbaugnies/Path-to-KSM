@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.6/css/bootstrap.min.css">
+  <link rel="stylesheet"
+    href="./src/style.css">
+  <title>Warcry Simulator</title>
+</head>
+
+<body>
+
+  <div class="container">
+
+  <h1 class="text-center">Warcry Simulator</h1>
+  <div class="row">
+    <div class="mx-auto">
+      <form>
+        <div class="input-group">
+            <div class="input-group-prepend col-7">
+                <span class="input-group-text col-3">Strength:</span>
+            </div>
+            <input type="number" id="strength" class="form-control" value="3">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend col-7">
+                <span class="input-group-text col-3">Attacks:</span>
+            </div>
+            <input type="number" id="attacks" class="form-control" value="1">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend col-7">
+                <span class="input-group-text col-3">Defense:</span>
+            </div>
+            <input type="number" id="toughness" class="form-control" value="3">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend col-7">
+                <span class="input-group-text col-3">Hitpoints:</span>
+            </div>
+            <input type="number" id="hitpoints" class="form-control" value="8">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend col-7">
+                <span class="input-group-text col-3">Damage:</span>
+            </div>
+            <input type="number" id="damage" class="form-control" value="2">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend col-7">
+                <span class="input-group-text col-3">Crit Damage:</span>
+            </div>
+            <input type="number" id="crit_damage" class="form-control" value="3">
+        </div>
+        
+        <span class="input-group-text col-3">Special Attacks</span>
+        <div class="input-group">
+            <div class="input-group-prepend col-7">
+                <span class="input-group-text col-3">Number:</span>
+            </div>
+            <input type="number" id="s_attacks" class="form-control" value="0">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend col-7">
+                <span class="input-group-text col-3">To-hit:</span>
+            </div>
+            <input type="number" id="s_hit" class="form-control" value="4">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend col-7">
+                <span class="input-group-text col-3">To-crit:</span>
+            </div>
+            <input type="number" id="s_crit" class="form-control" value="6">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend col-7">
+                <span class="input-group-text col-3">Damage:</span>
+            </div>
+            <input type="number" id="s_damage" class="form-control" value="1">
+        </div>
+        <div class="input-group">
+            <div class="input-group-prepend col-7">
+                <span class="input-group-text col-3">Crit Damage:</span>
+            </div>
+            <input type="number" id="s_crit_damage" class="form-control" value="2">
+        </div>
+        <button type="button" class="btn simBtn dblSizeBtn">Sim</button>
+
+      </form>
+    </div>
+    <textarea id="output" readonly></textarea>
+  </div>
+  <p>Code and How-to on <a href="https://github.com/bbaugnies/warcry_sim">Github</a></p>
+
+</div>
+
+<script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+<script src="./src/index.js" type="text/babel"></script>
+
+</body>
+
+</html>
