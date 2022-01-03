@@ -27,6 +27,9 @@ function attachListeners() {
         var name = document.getElementById("name").value;
         var region = document.getElementById("region").value;
         var server = document.getElementById("server").value;
+	var max_level = document.getElementById("max_level").value;
+	var path_type = document.querySelector('input[name="path_type"]:checked').value;
+	var affixes = document.querySelector('input[name="allowed_affixes"]:checked').value;
         
         var theURL = "https://raider.io/api/v1/characters/profile?region="+region+"&realm="+server+"&name="+name+"&fields=mythic_plus_scores_by_season%3Acurrent%2Cmythic_plus_best_runs%2Cmythic_plus_alternate_runs";
         var xhttp = new XMLHttpRequest();
@@ -44,7 +47,7 @@ function attachListeners() {
 			for (var x of info_json.mythic_plus_alternate_runs){
 				dungeon_score[x.dungeon].push({"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":false})
 			}
-       			document.getElementById("output").innerHTML = JSON.stringify(dungeon_score); }
+       			document.getElementById("output").innerHTML = JSON.stringify(dungeon_score)+affixes; }
 	};
 	xhttp.open("GET", theURL, true);
 	xhttp.send();

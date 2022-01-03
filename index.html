@@ -39,54 +39,26 @@
         </div>
         <div class="input-group">
             <div class="input-group-prepend col-7">
-                <span class="input-group-text col-3">Hitpoints:</span>
+                <span class="input-group-text col-3">Max Key level:</span>
             </div>
-            <input type="number" id="hitpoints" class="form-control" value="8">
+            <input type="number" id="max_level" class="form-control" value="15">
         </div>
         <div class="input-group">
             <div class="input-group-prepend col-7">
-                <span class="input-group-text col-3">Damage:</span>
+                <span class="input-group-text col-3">Affixes</span>
             </div>
-            <input type="number" id="damage" class="form-control" value="2">
+            <input type="radio" id="fortified" name="allowed_affixes" value="Fortified" class="form-control">
+	    <input type="radio" id="tyranical" name="allowed_affixes" value="Tyranical" class="form-control">
+	    <input type="radio" id="both" name="allowed_affixes" value="Both" class="form-control">
         </div>
         <div class="input-group">
             <div class="input-group-prepend col-7">
-                <span class="input-group-text col-3">Crit Damage:</span>
+                <span class="input-group-text col-3">Path Type:</span>
             </div>
-            <input type="number" id="crit_damage" class="form-control" value="3">
+            <input type="radio" id="fewest_runs" name="path_type" class="form-control" value="Fewest Runs">
+	    <input type="radio" id="lowest_level" name="path_type" class="form-control" value="Lowest Level">
         </div>
         
-        <span class="input-group-text col-3">Special Attacks</span>
-        <div class="input-group">
-            <div class="input-group-prepend col-7">
-                <span class="input-group-text col-3">Number:</span>
-            </div>
-            <input type="number" id="s_attacks" class="form-control" value="0">
-        </div>
-        <div class="input-group">
-            <div class="input-group-prepend col-7">
-                <span class="input-group-text col-3">To-hit:</span>
-            </div>
-            <input type="number" id="s_hit" class="form-control" value="4">
-        </div>
-        <div class="input-group">
-            <div class="input-group-prepend col-7">
-                <span class="input-group-text col-3">To-crit:</span>
-            </div>
-            <input type="number" id="s_crit" class="form-control" value="6">
-        </div>
-        <div class="input-group">
-            <div class="input-group-prepend col-7">
-                <span class="input-group-text col-3">Damage:</span>
-            </div>
-            <input type="number" id="s_damage" class="form-control" value="1">
-        </div>
-        <div class="input-group">
-            <div class="input-group-prepend col-7">
-                <span class="input-group-text col-3">Crit Damage:</span>
-            </div>
-            <input type="number" id="s_crit_damage" class="form-control" value="2">
-        </div>
         <button type="button" class="btn simBtn dblSizeBtn">Sim</button>
 
       </form>
