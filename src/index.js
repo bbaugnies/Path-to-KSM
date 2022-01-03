@@ -35,9 +35,13 @@ function attachListeners() {
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
        			// Typical action to be performed when the document is ready:
-			var score = JSON.parse(xhttp.responseText).mythic_plus_scores_by_season[0].scores.all;
-			console.log(score);
-       			document.getElementById("output").innerHTML = score;
+			var info_json = JSON.parse(xhttp.responseText)
+			var score = info_json.mythic_plus_scores_by_season[0].scores.all;
+			var dungeon_score = {};
+			for (var x of info_json.mythic_plus_best_runs){
+				dungeon_score[x.dungeon] = {"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id}
+			}
+       			document.getElementById("output").innerHTML = dungeon_score;
     		}
 	};
 	xhttp.open("GET", theURL, true);
