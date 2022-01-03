@@ -35,7 +35,7 @@ function attachListeners() {
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
        			// Typical action to be performed when the document is ready:
-			var score = JSON.parse(xhttp.responseText)."mythic_plus_scores_by_season"[0]."scores"."all";
+			var score = JSON.parse(xhttp.responseText).mythic_plus_scores_by_season[0].scores.all;
 			console.log(score);
        			document.getElementById("output").innerHTML = score;
     		}
