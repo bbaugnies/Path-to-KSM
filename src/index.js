@@ -39,10 +39,10 @@ function attachListeners() {
 			var score = info_json.mythic_plus_scores_by_season[0].scores.all;
 			var dungeon_score = {};
 			for (var x of info_json.mythic_plus_best_runs){
-				dungeon_score[x.dungeon] = {"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":true}
+				dungeon_score[x.dungeon] = [{"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":true}]
 			}
 			for (var x of info_json.mythic_plus_alternate_runs){
-				dungeon_score[x.dungeon] = {"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":false}
+				dungeon_score[x.dungeon].append({"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":false})
 			}
        			document.getElementById("output").innerHTML = JSON.stringify(dungeon_score); }
 	};
