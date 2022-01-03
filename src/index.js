@@ -28,7 +28,7 @@ function attachListeners() {
         var region = document.getElementById("region").value;
         var server = document.getElementById("server").value;
         
-        var theURL = "https://raider.io/api/v1/characters/profile?region="+region+"&realm="+server+"name="+name+"&fields=mythic_plus_scores_by_season%3Acurrent%2Cmythic_plus_best_runs%2Cmythic_plus_alternate_runs";
+        var theURL = "https://raider.io/api/v1/characters/profile?region="+region+"&realm="+server+"&name="+name+"&fields=mythic_plus_scores_by_season%3Acurrent%2Cmythic_plus_best_runs%2Cmythic_plus_alternate_runs";
         var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
