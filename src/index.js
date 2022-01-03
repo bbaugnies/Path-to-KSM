@@ -42,7 +42,7 @@ function attachListeners() {
 				dungeon_score[x.dungeon] = [{"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":true}]
 			}
 			for (var x of info_json.mythic_plus_alternate_runs){
-				dungeon_score[x.dungeon].append({"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":false})
+				dungeon_score[x.dungeon].push({"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":false})
 			}
        			document.getElementById("output").innerHTML = JSON.stringify(dungeon_score); }
 	};
