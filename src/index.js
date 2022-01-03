@@ -30,10 +30,13 @@ function attachListeners() {
         
         var theURL = "https://raider.io/api/v1/characters/profile?region="+region+"&realm="+server+"&name="+name+"&fields=mythic_plus_scores_by_season%3Acurrent%2Cmythic_plus_best_runs%2Cmythic_plus_alternate_runs";
         var xhttp = new XMLHttpRequest();
+
+	var dungeons = ["The Necrotic Wake", "Spires of Ascension", "Plaguefall", "Theater of Pain", "De Other Side", "Mists of Tirna Scithe", "Halls of Atonement", "Sanguine Depths"]
 	xhttp.onreadystatechange = function() {
 		if (this.readyState == 4 && this.status == 200) {
        			// Typical action to be performed when the document is ready:
-       			document.getElementById("output").innerHTML = xhttp.responseText;
+			var score = JSON.parse(xhttp.responseText)."mythic_plus_scores_by_season"[0]."scores"."all";
+       			document.getElementById("output").innerHTML = score;
     		}
 	};
 	xhttp.open("GET", theURL, true);
