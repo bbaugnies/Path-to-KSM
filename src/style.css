@@ -22,6 +22,6 @@ input[type=radio] + label::after {
     height: 1em;
 }
 input[type=radio]:checked + label::after {
-    background-color: #0;
+    background-color: #123;
 }
 
