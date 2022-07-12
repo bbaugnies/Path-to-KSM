@@ -9,3 +9,19 @@
   width: 117px;
 }
 
+input[type=radio] {
+    display: none;
+}
+input[type=radio] + label::before {
+    content: '';
+    display: inline-block;
+    border: 1px solid #000;
+    border-radius: 50%;
+    margin: 0 0.5em;
+    width: 1em;
+    height: 1em;
+}
+input[type=radio]:checked + label::before {
+    background-color: #ffa;
+}
+
