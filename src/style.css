@@ -21,4 +21,7 @@ input[type=radio] + label::after {
     width: 1em;
     height: 1em;
 }
+input[type=radio]:checked + label::before {
+    background-color: #0;
+}
 
