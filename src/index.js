@@ -21,7 +21,17 @@ function attachListeners() {
         return numerator/denominator;
     }
 
-
+    function get_dungeons(info) {
+        var dungeon_score = {};
+        for (var x of info_json.mythic_plus_best_runs){
+            dungeon_score[x.dungeon] = [{"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":true}]
+        }
+        for (var x of info_json.mythic_plus_alternate_runs){
+            dungeon_score[x.dungeon].push({"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":false})
+        }
+	return dungeon_score;
+    }
+	
     
     function sim () {
         var name = document.getElementById("name").value;
@@ -47,7 +57,9 @@ function attachListeners() {
 			for (var x of info_json.mythic_plus_alternate_runs){
 				dungeon_score[x.dungeon].push({"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":false})
 			}
-       			document.getElementById("output").innerHTML = JSON.stringify(dungeon_score)+affixes; }
+       			//document.getElementById("output").innerHTML = JSON.stringify(dungeon_score)+affixes; }
+			document.getElementById("output").innerHTML = dungeon_score.keys(); }
+
 	};
 	xhttp.open("GET", theURL, true);
 	xhttp.send();
