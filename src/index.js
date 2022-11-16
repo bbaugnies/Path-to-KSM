@@ -58,7 +58,8 @@ function attachListeners() {
 				dungeon_score[x.dungeon].push({"level": x.mythic_level, "score":x.score, "affix":x.affixes[0].id, "best":false})
 			}
        			//document.getElementById("output").innerHTML = JSON.stringify(dungeon_score)+affixes; }
-			document.getElementById("output").innerHTML = dungeon_score.keys(); }
+			document.getElementById("output").innerHTML = Object.keys(dungeon_score); }
+	
 
 	};
 	xhttp.open("GET", theURL, true);
